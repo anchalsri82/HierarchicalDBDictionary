@@ -10,20 +10,21 @@ Create table tbl_config
     value varchar2(8000)
 );
 
-Alter table tbl_config Add Constraint tbl_config_uk unique (type, key)
+Alter table tbl_config Add Constraint tbl_config_uk unique (type, key);
 
 
 e.g. data 
-Insert into tbl_config(type, key, value) Values ("TraderBookMapping", "anchal", "book1")
-Insert into tbl_config(type, key, value) Values ("TraderBookMapping", "bapi", "book2")
-Insert into tbl_config(type, key, value) Values ("TraderBookMapping", "bapi", "book3")
-Insert into tbl_config(type, key, value) Values ("TraderBookMapping", "pallav", "book3")
-Insert into tbl_config(type, key, value) Values ("TraderBookMapping", "sunil", "book4")
-Insert into tbl_config(type, key, value) Values ("BookMarketMapping", "book1", "nse")
-Insert into tbl_config(type, key, value) Values ("BookMarketMapping", "book2", "bse")
-Insert into tbl_config(type, key, value) Values ("BookMarketMapping", "book2", "nse")
-Insert into tbl_config(type, key, value) Values ("BookMarketMapping", "book3", "sgx")
-Insert into tbl_config(type, key, value) Values ("BookMarketMapping", "book4", "hkse")
+
+//Pallav Correcting SQL queries with right syntax on 02/02.
+Insert into tbl_config(type, key, value) Values ('TraderBookMapping', 'anchal', 'book1');
+Insert into tbl_config(type, key, value) Values ('TraderBookMapping', 'bapi', 'book2');
+Insert into tbl_config(type, key, value) Values ('TraderBookMapping', 'pallav', 'book3');
+Insert into tbl_config(type, key, value) Values ('TraderBookMapping', 'sunil', 'book4');
+Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book1', 'nse');
+Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book2', 'bse');
+Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book2', 'nse');
+Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book3', 'sgx');
+Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book4', 'hkse');
 
 
 DB Agnostic API to store multiple dictionaries in DB.

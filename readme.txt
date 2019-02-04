@@ -7,11 +7,9 @@ Create table tbl_config
 (
    type varchar2 (20),
     key varchar2(100),
-    value varchar2(8000)
+    value varchar2(2000),
+    Constraint tbl_config_uk unique (type, key)
 );
-
-Alter table tbl_config Add Constraint tbl_config_uk unique (type, key);
-
 
 e.g. data 
 
@@ -26,7 +24,7 @@ Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book2', '
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book3', 'sgx');
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book4', 'hkse');
 
-
+Create
 DB Agnostic API to store multiple dictionaries in DB.
 
 a method string GetValue(string type, string key) which will return value when dictionary Type and Key are passed to the method.

@@ -31,14 +31,3 @@ a method string GetValue(string type, string key) which will return value when d
 a method Dictionary<string,string> GetDictionary(string type) which will return complete dictionary (all key, value pairs) if passed a dictionary type.
 
 a method Dictionary<string,Dictionary<string,string>> GetAllDictionaries(string type) which will return all dictionaries.
-
-
-Oracle DB definition:
-Create table tbl_config
-(
-type varchar2 (20),
-key varchar2(100),
-value varchar2(8000)
-);
-
-Alter table tbl_config Add Constraint tbl_config_uk unique (type, key)

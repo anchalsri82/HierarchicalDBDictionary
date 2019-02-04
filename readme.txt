@@ -19,7 +19,6 @@ Insert into tbl_config(type, key, value) Values ('TraderBookMapping', 'bapi', 'b
 Insert into tbl_config(type, key, value) Values ('TraderBookMapping', 'pallav', 'book3');
 Insert into tbl_config(type, key, value) Values ('TraderBookMapping', 'sunil', 'book4');
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book1', 'nse');
-Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book2', 'bse');
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book2', 'nse');
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book3', 'sgx');
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book4', 'hkse');

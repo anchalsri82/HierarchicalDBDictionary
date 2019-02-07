@@ -23,6 +23,16 @@ Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book2', '
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book3', 'sgx');
 Insert into tbl_config(type, key, value) Values ('BookMarketMapping', 'book4', 'hkse');
 
+
+//Few queries to test table data:-
+
+select * from tbl_config;
+
+update tbl_config set value ='book3' where type='TraderBookMapping' and key='anchal';
+
+commit;
+
+
 Create
 DB Agnostic API to store multiple dictionaries in DB.
 

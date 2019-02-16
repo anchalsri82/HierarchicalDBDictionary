@@ -1,3 +1,5 @@
+package Dictionary;
+import Dictionary.DBConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -6,47 +8,18 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DictionaryClass {
-	
-  private Connection connect = null;
-  private Statement statement = null;
-  private PreparedStatement preparedStatement = null;
-  private ResultSet resultSet = null;
-
-
-  public void openDBConnection() throws Exception {
-    try {
-		System.out.println("Hello World from OTS-connectDB");
-
-      // This will load the Oracle driver, each DB has its own driver
-      Class.forName("oracle.jdbc.OracleDriver");
-      
-      // Setup the connection with the DB
-//      connect = DriverManager
-//              .getConnection("jdbc:oracle:thin:@192.168.56.3:1521:orclcdb", "system", "oracle");
-      connect = DriverManager
-              .getConnection("jdbc:oracle:thin:@localhost:1521:orclcdb", "system", "oracle");
-
-      System.out.println("Connection was :" + connect);
-      // Statements allow to issue SQL queries to the database
-      statement = connect.createStatement();
-      // Result set get the result of the SQL query
-    
-      connect.setAutoCommit(true);
-      
-    } catch (Exception e) {
-      throw e;
-    } finally {
-
-    }
-
-  }
-
+public class DictionaryClass extends DBConnection{
+	  
   
-  //Write a method string GetValue(string type, string key) which will return value 
+  public DictionaryClass() throws Exception {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+//Write a method string GetValue(string type, string key) which will return value 
   //when dictionary Type and Key are passed to the method.
   
-  public String GetValueFromTypeAndKey(String type, String key) throws Exception {
+public String GetValueFromTypeAndKey(String type, String key) throws Exception {
 	  
 	  ResultSet rs = null;
 	  try {
@@ -131,7 +104,7 @@ public class DictionaryClass {
   }
   
   // You need to close the resultSet and DB Connection.
-  protected void closeDbConnection() {
+  public void closeDbConnection() {
     try {
       if (resultSet != null) {
         resultSet.close();

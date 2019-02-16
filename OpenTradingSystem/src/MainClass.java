@@ -1,3 +1,5 @@
+import Dictionary.DictionaryClass;;
+
 public class MainClass {
 
 	public static void main(String[] args) throws Exception {
@@ -5,7 +7,7 @@ public class MainClass {
 		
 		//Connect Oracle DB.
 		DictionaryClass dao = new DictionaryClass();
-		dao.openDBConnection();
+		//dao.openDBConnection();
 		
 		//Write a method string GetValue(string type, string key) which will return value 
 		//when dictionary Type and Key are passed to the method.

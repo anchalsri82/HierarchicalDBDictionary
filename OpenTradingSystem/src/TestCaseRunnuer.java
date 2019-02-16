@@ -6,14 +6,16 @@ import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
+import Dictionary.DictionaryClass;
+
 public class TestCaseRunnuer {
 
     @Test
-    public void test_GetValueFromTypeAndKey() {
+    public void test_GetValueFromTypeAndKey() throws Exception {
 
     	DictionaryClass dao = new DictionaryClass();
 		try {
-			dao.openDBConnection();
+			//dao.openDBConnection();
 			assertEquals("book3", dao.GetValueFromTypeAndKey("TraderBookMapping","anchal"));
 			assertEquals("book3", dao.GetValueFromTypeAndKey("TraderBookMapping","anchal"));
 			assertEquals("book3", dao.GetValueFromTypeAndKey("TraderBookMapping","anchal"));
@@ -34,7 +36,7 @@ public class TestCaseRunnuer {
 			local_map.put("anchal","book3");
 			
 			DictionaryClass dao = new DictionaryClass();
-			dao.openDBConnection();
+			//dao.openDBConnection();
 			local_map_2 = dao.GetDictionaryFromType("TraderBookMapping");
 			assertTrue(local_map.equals(local_map_2));
 	    
